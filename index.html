@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>顔文字制作機</title>
+  <script>
+    function createFace() {
+        var lefthand = document.getElementById("lefthand").value;
+        var outline = document.getElementById("outline").value;
+        var lefteyes = document.getElementById("lefteyes").value;
+        var nose = document.getElementById("nose").value;
+        var righteyes = document.getElementById("righteyes").value;
+        var righthand = document.getElementById("righthand").value;
+        var comment = document.getElementById("comment").value;
+
+        var face = lefthand + outline.substring(0, 1) + lefteyes + nose + righteyes + outline.substring(1) + righthand + comment;
+        document.getElementById("faceContainer").innerHTML = '<div class="face">' + face + '</div>';
+    }
+  </script>
+  <style>
+   @import url("./PusyuuStyleSheet16.7.1.css");
+   .sakusei {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 100px;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      background-color: #00ff00;
+      border-radius: 50px;
+      padding: 10px;
+      z-index: 1;
+    }
+    .main,.modal .modal_wrapper {
+      margin-left: 0;
+    }
+    #faceContainer {
+      width: auto;
+      height: 350px;
+      overflow: scroll;
+      font-size: 50px;
+    }
+  </style>
+  <!--
+      *----------------------------------
+      |  ThisPageVersion: 1.0.0       |
+      |  © 2021-2023 By Pusyuu        |
+      |  LastUpdate: 2023-07-01       |
+      |  ・。・顔文字制作機㌨      　 |
+    ----------------------------------*
+    -->
+</head>
+<body>
+  <main class="main">
+  <div class="main_wrapper">
+    <h2>顔文字制作機</h2>
+    <p>ここでは、顔文字をパーツごとに入力するだけで簡単に顔文字を自作することができます。</p>
+    <div class="box-6">
+      <div id="faceContainer"> ここに顔文字が表示されます。 </div>
+    </div>
+    <a class="sakusei" href="#modal-1"><img class="image_iconsize" width="auto" height="auto" src="https://21emon.wjg.jp/SystemFolder/ImageData/seizu_pen.png"></img></a>
+    <div id="modal-1" class="modal">
+      <div class="modal_wrapper">
+      <a href="#mc" class="modal_close"></a>
+        <div class="modal_content-wrapper">
+          <div class="modal_header">顔文字作成画面</div>
+          <div class="modal_border"></div>
+            <div class="modal_message-box" style="overflow-x: hidden; overflow-y: scroll; max-height: 45vh;">
+              <p style="border: 3px solid #fff;">※閉じるには枠の外を押してください。</p>
+              <div style="display: flex; justify-content: center; flex-direction: column;">
+                <label for="outline">輪郭</label>
+                <select id="outline">
+                  <option value="()">( )</option>
+                  <option value="[]">[ ]</option>
+                  <option value="{}">{}</option>
+                </select>
+                <label for="lefthand">左手</label>
+                <input type="text" id="lefthand" placeholder="左手の記号を入力">
+                <label for="lefteyes">左目</label>
+                <input type="text" id="lefteyes" placeholder="左目の記号を入力">
+                <label for="nose">口</label>
+                <input type="text" id="nose" placeholder="口の記号を入力">
+                <label for="righteyes">右目</label>
+                <input type="text" id="righteyes" placeholder="右目の記号を入力">
+                <label for="righthand">右手</label>
+                <input type="text" id="righthand" placeholder="右手の記号を入力">
+                <label for="comment">コメント</label>
+                <input type="text" id="comment" placeholder="コメントを入力">
+                <button style="margin: 10px 0px 10px;" onclick="createFace(); location.href='#';">作成</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
