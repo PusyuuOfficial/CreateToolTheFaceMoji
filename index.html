@@ -15,7 +15,7 @@
         var comment = document.getElementById("comment").value;
 
         var face = lefthand + outline.substring(0, 1) + lefteyes + nose + righteyes + outline.substring(1) + righthand + comment;
-        document.getElementById("faceContainer").innerHTML = '<div class="face">' + face + '</div>';
+        document.getElementById("faceContainer").innerHTML = face;
     }
   </script>
   <style>
@@ -53,9 +53,9 @@
   </style>
   <!--
       *----------------------------------
-      |  ThisPageVersion: 1.0.2       |
+      |  ThisPageVersion: 1.0.3       |
       |  © 2021-2023 By Pusyuu        |
-      |  LastUpdate: 2023-07-02       |
+      |  LastUpdate: 2023-08-06       |
       |  ・。・顔文字制作機㌨      　 |
     ----------------------------------*
     -->
@@ -66,7 +66,7 @@
     <h2>顔文字制作機</h2>
     <p>ここでは、顔文字をパーツごとに入力するだけで簡単に顔文字を自作することができます。</p>
     <div class="box-6">
-      <div id="faceContainer"> ここに顔文字が表示されます。 </div>
+      <textarea id="faceContainer" style=" width: 100%; height: 350px; overflow: scroll;"> ここに顔文字が表示されます。 </textarea>
     </div>
     <a class="sakusei" href="#modal-1"><img class="image_iconsize" width="auto" height="auto" src="https://21emon.wjg.jp/SystemFolder/ImageData/seizu_pen.png"></img></a>
     <div id="modal-1" class="modal">
