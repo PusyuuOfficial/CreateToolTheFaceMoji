@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -12,6 +12,8 @@
         var nose = document.getElementById("nose").value;
         var righteyes = document.getElementById("righteyes").value;
         var righthand = document.getElementById("righthand").value;
+        var spacecheckbox = document.getElementById("space");
+        var space = spacecheckbox.checked ? " " : "";
         var comment = document.getElementById("comment").value;
 
         var face = lefthand + outline.substring(0, 1) + lefteyes + nose + righteyes + outline.substring(1) + righthand + comment;
@@ -53,9 +55,9 @@
   </style>
   <!--
       *----------------------------------
-      |  ThisPageVersion: 1.0.4       |
+      |  ThisPageVersion: 1.1.0       |
       |  © 2021-2023 By Pusyuu        |
-      |  LastUpdate: 2023-08-06       |
+      |  LastUpdate: 2023-08-22       |
       |  ・。・顔文字制作機㌨      　 |
     ----------------------------------*
     -->
@@ -80,22 +82,55 @@
               <div style="display: flex; justify-content: center; flex-direction: column;">
                 <label for="outline">輪郭</label>
                 <select id="outline">
-                  <option value="()">( )</option>
-                  <option value="[]">[ ]</option>
+                  <option value="()">()</option>
+                  <option value="[]">[]</option>
                   <option value="{}">{}</option>
+                  <option value="( *)">( *)</option>
+                  <option value="(* )">(* )</option>
                 </select>
                 <label for="lefthand">左手</label>
-                <input type="text" id="lefthand" placeholder="左手の記号を入力">
+                <select id="lefthand">
+                  <option value="">none</option>
+                  <option value="＼">＼</option>
+                  <option value="<="><=</option>
+                  <option value="ヽ">ヽ</option>
+                  <option value="ﾍ">ﾍ</option>
+                  <option value="┌">┌</option>
+                  <option value="└">└</option>
+                </select>
                 <label for="lefteyes">左目</label>
-                <input type="text" id="lefteyes" placeholder="左目の記号を入力">
+                <select id="lefteyes">
+                  <option value="・">・</option>
+                  <option value="´">´</option>
+                  <option value="゜">゜</option>
+                  <option value="･">･</option>
+                  <option value="｀・">｀・</option>
+                </select>
                 <label for="nose">口</label>
-                <input type="text" id="nose" placeholder="口の記号を入力">
+                <select id="nose">
+                  <option value="ー">ー</option>
+                  <option value="∀">∀</option>
+                  <option value="ω">ω</option>
+                </select>
                 <label for="righteyes">右目</label>
-                <input type="text" id="righteyes" placeholder="右目の記号を入力">
+                <select id="righteyes">
+                  <option value="・">・</option>
+                  <option value="´">´</option>
+                  <option value="゜">゜</option>
+                  <option value="･">･</option>
+                  <option value="・´">・´</option>
+                </select>
                 <label for="righthand">右手</label>
-                <input type="text" id="righthand" placeholder="右手の記号を入力">
+                <select id="righthand">
+                  <option value="">none</option>
+                  <option value="／">／</option>
+                  <option value="つ">つ</option>
+                  <option value="=>">=></option>
+                </select>
+                <label for="space">手前のスペースを入れる・入れない</label>
+                <input id="space" type="checkbox"/>
                 <label for="comment">コメント</label>
-                <input type="text" id="comment" placeholder="コメントを入力">
+                <input type="text" id="comment" placeholder="絵文字やコメントを入力"/>
                 <button style="margin: 10px 0px 10px;" onclick="createFace(); location.href='#';">作成</button>
               </div>
             </div>
