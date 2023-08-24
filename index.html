@@ -35,14 +35,19 @@
       padding: 10px;
       z-index: 1;
     }
+    .box-6 {
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+    }
     .main,.modal .modal_wrapper {
       margin-left: 0;
     }
     #faceContainer {
-      width: auto;
+      width: 97%;
       height: 350px;
       overflow: scroll;
-      font-size: 50px;
+      font-size: 35px;
     }
     @media screen and ( max-width:650px ) {
      .sakusei {
@@ -55,9 +60,9 @@
   </style>
   <!--
       *----------------------------------
-      |  ThisPageVersion: 1.1.0       |
+      |  ThisPageVersion: 2.0.0       |
       |  © 2021-2023 By Pusyuu        |
-      |  LastUpdate: 2023-08-22       |
+      |  LastUpdate: 2023-08-24       |
       |  ・。・顔文字制作機㌨      　 |
     ----------------------------------*
     -->
@@ -68,7 +73,7 @@
     <h2>顔文字制作機</h2>
     <p>ここでは、顔文字をパーツごとに入力するだけで簡単に顔文字を自作することができます。</p>
     <div class="box-6">
-      <textarea id="faceContainer" style=" width: 99%; height: 350px; overflow: scroll;"> ここに顔文字が表示されます。 </textarea>
+      <textarea id="faceContainer">ここに顔文字が表示されます。</textarea>
     </div>
     <a class="sakusei" href="#modal-1"><img class="image_iconsize" width="auto" height="auto" src="https://21emon.wjg.jp/SystemFolder/ImageData/seizu_pen.png"></img></a>
     <div id="modal-1" class="modal">
@@ -85,8 +90,7 @@
                   <option value="()">()</option>
                   <option value="[]">[]</option>
                   <option value="{}">{}</option>
-                  <option value="( *)">( *)</option>
-                  <option value="(* )">(* )</option>
+                  <option value="||">||</option>
                 </select>
                 <label for="lefthand">左手</label>
                 <select id="lefthand">
@@ -94,9 +98,6 @@
                   <option value="＼">＼</option>
                   <option value="<="><=</option>
                   <option value="ヽ">ヽ</option>
-                  <option value="ﾍ">ﾍ</option>
-                  <option value="┌">┌</option>
-                  <option value="└">└</option>
                 </select>
                 <label for="lefteyes">左目</label>
                 <select id="lefteyes">
@@ -104,21 +105,41 @@
                   <option value="´">´</option>
                   <option value="゜">゜</option>
                   <option value="･">･</option>
+                  <option value="。･">。･</option>
+                  <option value="≖">≖</option>
+                  <option value="▻">▻</option>
                   <option value="｀・">｀・</option>
+                  <option value="*・">*・</option>
+                  <option value="´,,•">´,,•</option>
+                  <option value="⁎ᵕ">⁎ᵕ</option>
+                  <option value="⑅•">⑅•</option>
+                  <option value="˃">˃</option>
                 </select>
                 <label for="nose">口</label>
                 <select id="nose">
                   <option value="ー">ー</option>
                   <option value="∀">∀</option>
                   <option value="ω">ω</option>
+                  <option value="ㅅ">ㅅ</option>
+                  <option value="⌂">⌂</option>
+                  <option value="^">^</option>
+                  <option value="ᴗ">ᴗ</option>
                 </select>
                 <label for="righteyes">右目</label>
                 <select id="righteyes">
                   <option value="・">・</option>
                   <option value="´">´</option>
                   <option value="゜">゜</option>
+                  <option value="゜?">゜?</option>
                   <option value="･">･</option>
+                  <option value="◅">◅</option>
+                  <option value="≖">≖</option>
                   <option value="・´">・´</option>
+                  <option value="・*">・*</option>
+                  <option value="•,,｀">•,,｀</option>
+                  <option value="ᵕ⁎">ᵕ⁎</option>
+                  <option value="•⑅">•⑅</option>
+                  <option value="˂">˂</option>
                 </select>
                 <label for="righthand">右手</label>
                 <select id="righthand">
@@ -126,11 +147,12 @@
                   <option value="／">／</option>
                   <option value="つ">つ</option>
                   <option value="=>">=></option>
+                  <option value="ノ">ノ</option>
                 </select>
                 <label for="space">手前のスペースを入れる・入れない</label>
-                <input id="space" type="checkbox"/>
+                <input id="space" type="checkbox" />
                 <label for="comment">コメント</label>
-                <input type="text" id="comment" placeholder="絵文字やコメントを入力"/>
+                <input type="text" id="comment" placeholder="絵文字やコメントを入力" />
                 <button style="margin: 10px 0px 10px;" onclick="createFace(); location.href='#';">作成</button>
               </div>
             </div>
