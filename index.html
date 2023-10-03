@@ -1,166 +1,169 @@
 ﻿<!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name='robots' content='noindex,nofollow'>
-  <meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
-  <title>顔文字制作機</title>
-  <script>
-    function createFace() {
-        var lefthand = document.getElementById("lefthand").value;
-        var outline = document.getElementById("outline").value;
-        var lefteyes = document.getElementById("lefteyes").value;
-        var nose = document.getElementById("nose").value;
-        var righteyes = document.getElementById("righteyes").value;
-        var righthand = document.getElementById("righthand").value;
-        var spacecheckbox = document.getElementById("space");
-        var space = spacecheckbox.checked ? " " : "";
-        var comment = document.getElementById("comment").value;
-
-        var face = lefthand + outline.substring(0, 1) + lefteyes + nose + righteyes + outline.substring(1) + righthand + comment;
-        document.getElementById("faceContainer").innerHTML = face;
-    }
-  </script>
-  <style>
-   @import url("./PusyuuStyleSheet16.7.1.css");
-   .sakusei {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      width: 100px;
-      height: 35px;
-      display: flex;
-      justify-content: center;
-      background-color: #00ff00;
-      border-radius: 50px;
-      padding: 10px;
-      z-index: 1;
-    }
-    .box-6 {
-      padding: 15px;
-      display: flex;
-      justify-content: center;
-    }
-    .main,.modal .modal_wrapper {
-      margin-left: 0;
-    }
-    #faceContainer {
-      width: 97%;
-      height: 350px;
-      overflow: scroll;
-      font-size: 35px;
-    }
-    @media screen and ( max-width:650px ) {
+  <head>
+    <meta charset="UTF-8">
+    <meta name='robots' content='noindex,nofollow'>
+    <meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
+    <title>顔文字制作機</title>
+    <script src="./script.js" type="text/javascript" charset="UTF-8" defer></script>
+    <style>
+     @import url("./PusyuuStyleSheet20.2.1.css");
      .sakusei {
-       width: 35px;
-       height: 35px;
-       border-radius: 5px;
-       padding: 5px;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        width: 100px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        background-color: #00ff00;
+        border-radius: 50px;
+        padding: 10px;
+        z-index: 1;
       }
-    }
-  </style>
-  <!--
-      *----------------------------------
-      |  ThisPageVersion: 2.0.0       |
-      |  © 2021-2023 By Pusyuu        |
-      |  LastUpdate: 2023-08-24       |
-      |  ・。・顔文字制作機㌨      　 |
-    ----------------------------------*
+      .box-6 {
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+      }
+      .main,.modal .modal_wrapper {
+        margin-left: 0;
+      }
+      #faceContainer {
+        width: 97%;
+        height: 350px;
+        overflow: scroll;
+        font-size: 35px;
+      }
+      @media screen and ( max-width:650px ) {
+       .sakusei {
+         width: 35px;
+         height: 35px;
+         border-radius: 5px;
+         padding: 5px;
+        }
+      }
+    </style>
+    <!--
+        *----------------------------------
+        |  ThisPageVersion: 2.2.0       |
+        |  © 2021-2023 By Pusyuu        |
+        |  LastUpdate: 2023-10-03       |
+        |  ・。・顔文字制作機㌨      　 |
+      ----------------------------------*
     -->
-</head>
-<body>
-  <main class="main">
-  <div class="main_wrapper">
-    <h2>顔文字制作機</h2>
-    <p>ここでは、顔文字をパーツごとに入力するだけで簡単に顔文字を自作することができます。</p>
-    <div class="box-6">
-      <textarea id="faceContainer">ここに顔文字が表示されます。</textarea>
-    </div>
-    <a class="sakusei" href="#modal-1"><img class="image_iconsize" width="auto" height="auto" src="https://21emon.wjg.jp/SystemFolder/ImageData/seizu_pen.png"></img></a>
-    <div id="modal-1" class="modal">
-      <div class="modal_wrapper">
-      <a href="#mc" class="modal_close"></a>
-        <div class="modal_content-wrapper">
-          <div class="modal_header">顔文字作成画面</div>
-          <div class="modal_border"></div>
-            <div class="modal_message-box" style="overflow-x: hidden; overflow-y: scroll; max-height: 45vh;">
-              <p style="border: 3px solid #fff;">※閉じるには枠の外を押してください。</p>
-              <div style="display: flex; justify-content: center; flex-direction: column;">
-                <label for="outline">輪郭</label>
-                <select id="outline">
-                  <option value="()">()</option>
-                  <option value="[]">[]</option>
-                  <option value="{}">{}</option>
-                  <option value="||">||</option>
-                </select>
-                <label for="lefthand">左手</label>
-                <select id="lefthand">
-                  <option value="">none</option>
-                  <option value="＼">＼</option>
-                  <option value="<="><=</option>
-                  <option value="ヽ">ヽ</option>
-                </select>
-                <label for="lefteyes">左目</label>
-                <select id="lefteyes">
-                  <option value="・">・</option>
-                  <option value="´">´</option>
-                  <option value="゜">゜</option>
-                  <option value="･">･</option>
-                  <option value="。･">。･</option>
-                  <option value="≖">≖</option>
-                  <option value="▻">▻</option>
-                  <option value="｀・">｀・</option>
-                  <option value="*・">*・</option>
-                  <option value="´,,•">´,,•</option>
-                  <option value="⁎ᵕ">⁎ᵕ</option>
-                  <option value="⑅•">⑅•</option>
-                  <option value="˃">˃</option>
-                </select>
-                <label for="nose">口</label>
-                <select id="nose">
-                  <option value="ー">ー</option>
-                  <option value="∀">∀</option>
-                  <option value="ω">ω</option>
-                  <option value="ㅅ">ㅅ</option>
-                  <option value="⌂">⌂</option>
-                  <option value="^">^</option>
-                  <option value="ᴗ">ᴗ</option>
-                </select>
-                <label for="righteyes">右目</label>
-                <select id="righteyes">
-                  <option value="・">・</option>
-                  <option value="´">´</option>
-                  <option value="゜">゜</option>
-                  <option value="゜?">゜?</option>
-                  <option value="･">･</option>
-                  <option value="◅">◅</option>
-                  <option value="≖">≖</option>
-                  <option value="・´">・´</option>
-                  <option value="・*">・*</option>
-                  <option value="•,,｀">•,,｀</option>
-                  <option value="ᵕ⁎">ᵕ⁎</option>
-                  <option value="•⑅">•⑅</option>
-                  <option value="˂">˂</option>
-                </select>
-                <label for="righthand">右手</label>
-                <select id="righthand">
-                  <option value="">none</option>
-                  <option value="／">／</option>
-                  <option value="つ">つ</option>
-                  <option value="=>">=></option>
-                  <option value="ノ">ノ</option>
-                </select>
-                <label for="space">手前のスペースを入れる・入れない</label>
-                <input id="space" type="checkbox" />
-                <label for="comment">コメント</label>
-                <input type="text" id="comment" placeholder="絵文字やコメントを入力" />
-                <button style="margin: 10px 0px 10px;" onclick="createFace(); location.href='#';">作成</button>
+  </head>
+  <body>
+    <main class="main">
+      <div class="main_wrapper">
+        <h2>顔文字制作機</h2>
+        <p>ここでは、顔文字をパーツごとに入力するだけで簡単に顔文字を自作することができます。</p>
+        <div class="box-6">
+          <textarea id="faceContainer">ここに顔文字が表示されます。</textarea>
+        </div>
+        <a class="sakusei" href="#modal-1"><img class="image_iconsize" width="auto" height="auto" src="https://21emon.wjg.jp/SystemFolder/ImageData/seizu_pen.png"></img></a>
+        <div id="modal-1" class="modal">
+          <div class="modal_wrapper">
+          <a href="#mc" class="modal_close"></a>
+            <div class="modal_content-wrapper">
+              <div class="modal_header">顔文字作成画面</div>
+              <div class="modal_border"></div>
+              <div class="modal_message-box" style="overflow-x: hidden; overflow-y: scroll; max-height: 45vh;">
+                <p style="border: 3px solid #ccc;">※閉じるには枠の外を押してください。</p>
+                <div style="display: flex; justify-content: center; flex-direction: column;">
+                  <label for="outline">輪郭</label>
+                  <select id="outline">
+                    <option value="()">()</option>
+                    <option value="[]">[]</option>
+                    <option value="{}">{}</option>
+                    <option value="||">||</option>
+                  </select>
+                  <label for="lefthand">左手</label>
+                  <select id="lefthand">
+                    <option value="">none</option>
+                    <option value="＼">＼</option>
+                    <option value="<="><=</option>
+                    <option value="((φ">((φ</option>
+                    <option value="((o">((o</option>
+                    <option value="ヽ">ヽ</option>
+                  </select>
+                  <label for="lefteyes">左目</label>
+                  <select id="lefteyes">
+                    <option value="・">・</option>
+                    <option value="´">´</option>
+                    <option value=";`">;`</option>
+                    <option value="゜">゜</option>
+                    <option value="･">･</option>
+                    <option value="ㆁ">ㆁ</option>
+                    <option value="。･">。･</option>
+                    <option value="｡･">｡･</option>
+                    <option value="≖">≖</option>
+                    <option value="▻">▻</option>
+                    <option value="･`">･`</option>
+                    <option value="。-`">。-`</option>
+                    <option value="｀・">｀・</option>
+                    <option value="*・">*・</option>
+                    <option value="*¯ ">*¯ </option>
+                    <option value="๑•̀">๑•̀</option>
+                    <option value="´,,•">´,,•</option>
+                    <option value="⁎ᵕ">⁎ᵕ</option>
+                    <option value="⑅•">⑅•</option>
+                    <option value="˃">˃</option>
+                  </select>
+                  <label for="nose">口</label>
+                  <select id="nose">
+                    <option value="ー">ー</option>
+                    <option value="∀">∀</option>
+                    <option value="ω">ω</option>
+                    <option value="д">д</option>
+                    <option value="ㅂ">ㅂ</option>
+                    <option value="皿">皿</option>
+                    <option value="ㅅ">ㅅ</option>
+                    <option value="⌂">⌂</option>
+                    <option value="^">^</option>
+                    <option value="ᴗ">ᴗ</option>
+                  </select>
+                  <label for="righteyes">右目</label>
+                  <select id="righteyes">
+                    <option value="・">・</option>
+                    <option value="´">´</option>
+                    <option value="゜">゜</option>
+                    <option value="゜?">゜?</option>
+                    <option value="･">･</option>
+                    <option value="･｡">･｡</option>
+                    <option value="ㆁ">ㆁ</option>
+                    <option value="◅">◅</option>
+                    <option value="≖">≖</option>
+                    <option value="´-">´-</option>
+                    <option value="・´">・´</option>
+                    <option value="•́">•́</option>
+                    <option value="・*">・*</option>
+                    <option value="¯*">¯*</option>
+                    <option value="•,,｀">•,,｀</option>
+                    <option value="ᵕ⁎">ᵕ⁎</option>
+                    <option value="•⑅">•⑅</option>
+                    <option value="˂">˂</option>
+                  </select>
+                  <label for="righthand">右手</label>
+                  <select id="righthand">
+                    <option value="">none</option>
+                    <option value="／">／</option>
+                    <option value="つ">つ</option>
+                    <option value="=>">=></option>
+                    <option value="o))">o))</option>
+                    <option value="ノ">ノ</option>
+                  </select>
+                  <label for="space">手前のスペースを入れる・入れない</label>
+                  <input id="space" type="checkbox" />
+                  <label for="comment">コメント</label>
+                  <input type="text" id="comment" placeholder="絵文字やコメントを入力" />
+                  <button style="margin: 10px 0px 10px;" onclick="createFace(); location.href='#';">作成</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </main>
-</body>
+    </main>
+  </body>
 </html>
