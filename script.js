@@ -1,8 +1,8 @@
 /*****************************************
   *----------------------------------
-  |  ThisStyleVersion: 1.1.0      |
+  |  ThisStyleVersion: 1.1.1      |
   |  © 2021-2023 By Pusyuu        |
-  |  LastUpdate: 2023-09-15       |
+  |  LastUpdate: 2023-10-06       |
   |  License: MIT License         |
   |  (^U^)KaomjiJsDesu            |
 ----------------------------------*
@@ -38,9 +38,4 @@ function createFace() {
 
   const face = lefthand + outline.substring(0, 1) + lefteyes + nose + righteyes + outline.substring(1) + righthand + space + comment;
   document.getElementById("faceContainer").innerHTML = face;
-}
-
-// 入力フィールドが変更されたときに顔を生成する関数を呼び出す
-function updateFace() {
-  createFace();
 }
