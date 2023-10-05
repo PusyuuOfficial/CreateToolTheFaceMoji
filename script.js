@@ -1,6 +1,6 @@
 /*****************************************
   *----------------------------------
-  |  ThisStyleVersion: 1.1.1      |
+  |  ThisStyleVersion: 1.2.0      |
   |  © 2021-2023 By Pusyuu        |
   |  LastUpdate: 2023-10-06       |
   |  License: MIT License         |
@@ -18,12 +18,10 @@ const inputFields = {};
 for (let i = 0; i < inputFieldIds.length; i++) {
   const inputFieldId = inputFieldIds[i];
   inputFields[inputFieldId] = document.getElementById(inputFieldId);
-  inputFields[inputFieldId].addEventListener("input", updateFace);
 }
 
 // スペースのチェックボックスを取得
 const spaceCheckbox = document.getElementById("space");
-spaceCheckbox.addEventListener("change", updateFace);
 
 // 顔を生成する関数
 function createFace() {
@@ -38,4 +36,6 @@ function createFace() {
 
   const face = lefthand + outline.substring(0, 1) + lefteyes + nose + righteyes + outline.substring(1) + righthand + space + comment;
   document.getElementById("faceContainer").innerHTML = face;
+  faceContainer.innerHTML = "";
+  faceContainer.appendChild(document.createTextNode(face));
 }
