@@ -1,8 +1,8 @@
 /*****************************************
   *----------------------------------
-  |  ThisStyleVersion: 1.2.0      |
+  |  ThisStyleVersion: 1.2.1      |
   |  © 2021-2023 By Pusyuu        |
-  |  LastUpdate: 2023-10-06       |
+  |  LastUpdate: 2023-11-29       |
   |  License: MIT License         |
   |  (^U^)KaomjiJsDesu            |
 ----------------------------------*
@@ -23,6 +23,11 @@ for (let i = 0; i < inputFieldIds.length; i++) {
 // スペースのチェックボックスを取得
 const spaceCheckbox = document.getElementById("space");
 
+const button = document.getElementById("createButton");
+
+const faceFromated = document.getElementById("faceContainer");
+faceFromated.readOnly = true;
+
 // 顔を生成する関数
 function createFace() {
   const lefthand = inputFields["lefthand"].value;
@@ -33,9 +38,11 @@ function createFace() {
   const righthand = inputFields["righthand"].value;
   const space = spaceCheckbox.checked ? " " : "";
   const comment = inputFields["comment"].value;
-
-  const face = lefthand + outline.substring(0, 1) + lefteyes + nose + righteyes + outline.substring(1) + righthand + space + comment;
-  document.getElementById("faceContainer").innerHTML = face;
-  faceContainer.innerHTML = "";
-  faceContainer.appendChild(document.createTextNode(face));
+  faceFromated.innerText = lefthand + outline.substring(0, 1) + lefteyes + nose + righteyes + outline.substring(1) + righthand + space + comment;
 }
+
+button.addEventListener('click', function() {
+  location.hash = "mc";
+  faceFromated.innerText = "";
+  createFace();
+});
