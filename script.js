@@ -1,7 +1,7 @@
 /*****************************************
   *----------------------------------
-  |  ThisStyleVersion: 1.2.1      |
-  |  © 2021-2023 By Pusyuu        |
+  |  ThisJsVersion: 1.2.1         |
+  |  © 2021-2024 By PusyuuWanko/  |
   |  LastUpdate: 2023-11-29       |
   |  License: MIT License         |
   |  (^U^)KaomjiJsDesu            |
