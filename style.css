@@ -1,8 +1,8 @@
 /*****************************************
   *----------------------------------
-  |  ThisCssVersion: 1.2.1        |
+  |  ThisStyleVersion: 1.2.2      |
   |  © 2021-2024 By PusyuuWanko/  |
-  |  LastUpdate: 2023-11-29       |
+  |  LastUpdate: 2024-02-17       |
   |  License: MIT License         |
   |  (^U^)KaomjiJsDesu            |
 ----------------------------------*
@@ -44,7 +44,7 @@
   font-size: 35px;
 }
 
-@media screen and (max-width:650px) {
+@media screen and (max-width:660px) {
   .sakusei {
     width: 35px;
     height: 35px;
